@@ -1,1 +1,1 @@
-# ML
+# The objective is to classify mobile phones into different price categories using machine learning classification algorithms and compare their performance.
