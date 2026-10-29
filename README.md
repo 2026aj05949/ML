@@ -278,17 +278,13 @@ streamlit run app.py
 
 Add screenshot:
 
-```text
-screenshots/dashboard.png
-```
+![Dashboard Home](screenshots/dashboard.png)
 
 ### Prediction Results
 
 Add screenshot:
 
-```text
-screenshots/predictions.png
-```
+![Prediction Results](screenshots/predictions.png)
 
 ---
 
