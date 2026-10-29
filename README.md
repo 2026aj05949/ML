@@ -1,18 +1,28 @@
 # Mobile Price Classification Using Custom Machine Learning Algorithms
 
-## 📌 Project Overview
+## 📌 Live Demo
 
-This project implements and compares multiple machine learning classification algorithms for predicting the price range of mobile phones based on their specifications. The dataset contains various mobile phone features such as battery power, RAM, screen dimensions, camera specifications, and other technical characteristics.
+### GitHub Repository
+https://github.com/2026aj05949/ML
 
-The objective is to evaluate the performance of different classifiers and identify the most suitable model for mobile price classification.
+### Streamlit Application
+https://2026aj05949.streamlit.app/
+
+---
+
+## 📖 Project Overview
+
+This project implements and compares multiple machine learning classification algorithms for predicting the price range of mobile phones based on their technical specifications. The goal is to classify mobile phones into different price categories and compare the performance of various custom-built machine learning models.
+
+The project includes model training, evaluation, comparison, and deployment using Streamlit.
 
 ---
 
 ## 🎯 Problem Statement
 
-Given the specifications of a mobile phone, predict its price category (`price_range`).
+The objective of this project is to predict the price category of a mobile phone using machine learning algorithms based on features such as battery power, RAM, screen resolution, camera specifications, and other hardware characteristics.
 
-The target variable consists of four classes:
+### Price Categories
 
 - **0** → Low Cost
 - **1** → Medium Cost
@@ -21,13 +31,20 @@ The target variable consists of four classes:
 
 ---
 
-## 📂 Dataset Information
+## 📊 Dataset Information
 
-**Dataset:** Mobile Price Classification Dataset
+### Dataset Name
+
+Mobile Price Classification Dataset
+
+### Dataset Details
+
+- Total Records: **2000**
+- Input Features: **20**
+- Target Classes: **4**
+- Target Variable: **price_range**
 
 ### Features
-
-The dataset contains 20 input features:
 
 - battery_power
 - blue
@@ -50,16 +67,6 @@ The dataset contains 20 input features:
 - touch_screen
 - wifi
 
-### Target Variable
-
-- price_range
-
-### Dataset Size
-
-- Total Records: 2000
-- Features: 20
-- Classes: 4
-
 ---
 
 ## 🛠 Technologies Used
@@ -75,7 +82,7 @@ The dataset contains 20 input features:
 
 ## 🤖 Custom Machine Learning Models Implemented
 
-The following algorithms were implemented from scratch:
+The following machine learning algorithms were implemented from scratch:
 
 1. Logistic Regression
 2. Decision Tree
@@ -94,9 +101,9 @@ ML/
 ├── app.py
 ├── train_models.py
 ├── evaluate_models.py
-├── train.csv
 ├── requirements.txt
 ├── README.md
+├── train.csv
 │
 ├── CustomLogisticRegression.py
 ├── CustomDecisionTreeClassifier.py
@@ -104,6 +111,8 @@ ML/
 ├── CustomGaussianNB.py
 ├── CustomSVM.py
 ├── CustomRandomForestClassifier.py
+│
+├── model_comparison_results.csv
 │
 └── model/
     ├── Logistic_Regression.pkl
@@ -125,13 +134,13 @@ Clone the repository:
 git clone https://github.com/2026aj05949/ML.git
 ```
 
-Navigate to the project directory:
+Move into the project directory:
 
 ```bash
 cd ML
 ```
 
-Install the required dependencies:
+Install all required dependencies:
 
 ```bash
 pip install -r requirements.txt
@@ -139,25 +148,33 @@ pip install -r requirements.txt
 
 ---
 
-## 🚀 Training Models
+## 🚀 Train the Models
 
-Train all machine learning models using:
+Run the training script:
 
 ```bash
 python train_models.py
 ```
 
-This will generate and save all trained model files in the `model/` directory.
+This script:
+
+- Loads the dataset
+- Performs train-test split
+- Applies feature scaling
+- Trains all custom machine learning models
+- Saves trained models into the `model/` directory
 
 ---
 
-## 📊 Model Evaluation
+## 📈 Evaluate the Models
 
-Run the evaluation script:
+Run:
 
 ```bash
 python evaluate_models.py
 ```
+
+### Evaluation Metrics
 
 The following metrics are calculated:
 
@@ -166,14 +183,14 @@ The following metrics are calculated:
 - Recall
 - F1 Score
 - Matthews Correlation Coefficient (MCC)
-- Area Under Curve (AUC)
+- Confusion Matrix
 
 ---
 
-## 📈 Performance Comparison
+## 📊 Model Performance Comparison
 
 | Model | Accuracy | Precision | Recall | F1 Score | MCC |
-|---------|---------|---------|---------|---------|---------|
+|---------|---------:|---------:|---------:|---------:|---------:|
 | Logistic Regression | 66.70% | 70.88% | 66.70% | 62.41% | 0.5884 |
 | Decision Tree | 97.25% | 97.25% | 97.25% | 97.25% | 0.9633 |
 | KNN | 66.10% | 67.07% | 66.10% | 66.18% | 0.5498 |
@@ -190,24 +207,24 @@ The following metrics are calculated:
 - Useful as a baseline model.
 
 ### Decision Tree
-- Very high accuracy.
-- Simple and interpretable model.
+- Achieved excellent performance.
+- Easy to understand and interpret.
 
 ### KNN
-- Sensitive to the choice of neighbors.
+- Sensitive to neighboring instances.
 - Lower performance compared to tree-based methods.
 
 ### Naive Bayes
-- Fast training and prediction.
-- Good probabilistic classification performance.
+- Fast and efficient probabilistic classifier.
+- Delivered good performance.
 
 ### SVM
-- Moderate classification accuracy.
-- Performance may improve with parameter tuning.
+- Moderate classification performance.
+- May benefit from additional tuning.
 
 ### Random Forest
-- Achieved the best results among all models.
-- Robust and accurate ensemble learning algorithm.
+- Achieved the highest performance among all models.
+- Most robust and accurate model.
 
 ---
 
@@ -215,21 +232,21 @@ The following metrics are calculated:
 
 ### Random Forest Classifier
 
-**Performance Metrics:**
+**Performance Metrics**
 
-- Accuracy: 98.00%
-- Precision: 98.01%
-- Recall: 98.00%
-- F1 Score: 98.00%
-- MCC: 0.9733
+- Accuracy: **98.00%**
+- Precision: **98.01%**
+- Recall: **98.00%**
+- F1 Score: **98.00%**
+- MCC: **0.9733**
 
-Random Forest demonstrated superior performance and is selected as the optimal model for this classification task.
+Random Forest outperformed all other classifiers and was selected as the final model for mobile price classification.
 
 ---
 
 ## 🌐 Streamlit Application
 
-Run the Streamlit dashboard:
+Launch the dashboard:
 
 ```bash
 streamlit run app.py
@@ -237,22 +254,65 @@ streamlit run app.py
 
 ### Features
 
-- Upload dataset
-- Select classification model
-- Generate predictions
-- View evaluation metrics
-- Display confusion matrix
-- Compare model performance
+✅ Upload CSV datasets
+
+✅ Select machine learning model
+
+✅ Generate predictions
+
+✅ Display uploaded dataset
+
+✅ View prediction results
+
+✅ Display Accuracy, Precision, Recall, F1 Score, and MCC
+
+✅ View Confusion Matrix
+
+✅ User-friendly interface
 
 ---
 
-## ✅ Conclusion
+## 📸 Application Screenshots
+
+### Dashboard Home
+
+Add screenshot:
+
+```text
+screenshots/dashboard.png
+```
+
+### Prediction Results
+
+Add screenshot:
+
+```text
+screenshots/predictions.png
+```
+
+---
+
+## ✅ Final Submission Checklist
+
+- [x] GitHub repository link works
+- [x] Streamlit app link opens correctly
+- [x] App loads without errors
+- [x] All required features implemented
+- [x] Custom machine learning models implemented
+- [x] Model evaluation completed
+- [x] Performance comparison generated
+- [x] README.md completed
+- [x] Streamlit application deployed
+
+---
+
+## 🎯 Conclusion
 
 This project successfully implemented six machine learning classification algorithms from scratch and evaluated their performance on the Mobile Price Classification dataset.
 
-Among all the models, **Random Forest** achieved the highest accuracy of **98.00%** and the highest MCC score of **0.9733**, making it the most effective model for predicting mobile phone price categories.
+The comparative analysis showed that ensemble learning methods significantly outperform individual classifiers. Among all tested models, **Random Forest** achieved the highest accuracy of **98.00%** and the highest MCC score of **0.9733**, making it the most suitable model for predicting mobile phone price categories.
 
-The results demonstrate that ensemble learning methods such as Random Forest provide superior predictive performance and generalization capability compared to individual classifiers.
+The project includes model training, evaluation, comparison, and deployment through an interactive Streamlit web application.
 
 ---
 
@@ -260,7 +320,12 @@ The results demonstrate that ensemble learning methods such as Random Forest pro
 
 **UMESHA M S**
 
-**Course:** Artificial Intelligence and Machine Learning (AIML)
+Artificial Intelligence and Machine Learning (AIML)
 
-**GitHub Repository:**
+### Repository Link
+
 https://github.com/2026aj05949/ML
+
+### Streamlit Deployment
+
+https://2026aj05949.streamlit.app/
